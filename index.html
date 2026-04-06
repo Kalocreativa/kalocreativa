@@ -7,10 +7,10 @@
     <meta name="description" content="Servicios de diseño gráfico profesional: Stickers, Vinilos, Letras Corpóreas, Neón LED y Papelería. ¡Transforma tu marca hoy!">
     <meta property="og:title" content="Kalo Creativa | Portafolio de Diseño">
     <meta property="og:description" content="Soluciones visuales de alto impacto para tu negocio.">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --bg-color: #ffffff;
@@ -28,21 +28,92 @@
             --accent-color: #3b82f6;
         }
 
-        * { box-sizing: border-box; transition: background-color 0.3s ease, color 0.3s ease; scroll-behavior: smooth; }
-        body { font-family: "Outfit", sans-serif; margin: 0; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        * {
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            scroll-behavior: smooth;
+        }
 
-        /* Navbar */
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; position: sticky; top: 0; background: var(--nav-bg); backdrop-filter: blur(10px); z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .logo img { height: 50px; width: auto; display: block; transition: transform 0.3s ease; }
+        body {
+            font-family: "Outfit", sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* ── Navbar ── */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
         .logo img:hover { transform: scale(1.05); }
-        .nav-right { display: flex; align-items: center; }
-        .nav-list { display: flex; list-style: none; margin: 0; padding: 0; }
-        .nav-list li a { text-decoration: none; color: var(--text-color); margin: 0 15px; font-weight: 600; }
-        .theme-btn { background: none; border: none; color: var(--text-color); font-size: 1.2rem; cursor: pointer; margin-right: 20px; }
-        .menu-toggle { display: none; cursor: pointer; }
-        .bar { display: block; width: 25px; height: 3px; margin: 5px; background: var(--text-color); }
 
-        /* Hero */
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Links en desktop */
+        .nav-list li a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        /* Hover en desktop */
+        .nav-list li a:hover {
+            color: var(--accent-color) !important;
+        }
+
+        .theme-btn {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px;
+            background: var(--text-color);
+            transition: background 0.3s ease;
+        }
+
+        /* ── Hero ── */
         .hero-header {
             position: relative;
             min-height: calc(100vh - 80px);
@@ -52,23 +123,25 @@
             justify-content: center;
             text-align: center;
             padding: 2rem;
-            background-image: url('portada-01.jpg');
+            background-image: url('img/portada-01.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             margin: 0;
         }
+
         .hero-overlay {
             position: absolute;
             inset: 0;
             background: rgba(0, 0, 0, 0.65);
         }
+
         .hero-content {
             position: relative;
             z-index: 1;
         }
 
-        /* Título magnético */
+        /* ── Título magnético ── */
         .magnetic-title {
             display: flex;
             flex-wrap: wrap;
@@ -82,6 +155,7 @@
             user-select: none;
             line-height: 1.1;
         }
+
         .magnetic-char {
             display: inline-block;
             transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -101,87 +175,209 @@
         }
         .hero-cta:hover { background: #fff; color: #111; }
 
-        /* Galería */
-        .portfolio { padding: 50px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: auto; }
-        .work-item { position: relative; height: 400px; border-radius: 20px; overflow: hidden; background: var(--card-bg); }
-        .work-item img { width: 100%; height: 100%; object-fit: cover; }
-        .work-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; opacity: 0; padding: 20px; transition: opacity 0.4s; }
+        /* ── Galería ── */
+        .portfolio {
+            padding: 50px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .work-item {
+            position: relative;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--card-bg);
+        }
+
+        .work-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .work-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            padding: 20px;
+            transition: opacity 0.4s;
+        }
+
         .work-item:hover .work-overlay { opacity: 1; }
-        .work-info { text-align: center; color: rgb(10, 153, 160); transform: translateY(20px); transition: transform 0.4s; }
+
+        .work-info {
+            text-align: center;
+            color: rgb(10, 153, 160);
+            transform: translateY(20px);
+            transition: transform 0.4s;
+        }
+
         .work-item:hover .work-info { transform: translateY(0); }
         .work-info h3 { font-size: 1.5rem; margin-bottom: 10px; }
 
-        /* FAQ */
-        .faq { padding: 80px 5%; max-width: 800px; margin: auto; }
-        .faq h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
-        .faq-item { margin-bottom: 30px; border-bottom: 1px solid var(--card-bg); padding-bottom: 20px; }
-        .faq-item h4 { color: var(--accent-color); margin-bottom: 10px; font-size: 1.2rem; }
-        
-        /* Footer */
-        footer { padding: 40px; text-align: center; font-size: 0.9rem; opacity: 0.7; }
+        /* ── FAQ ── */
+        .faq {
+            padding: 80px 5%;
+            max-width: 800px;
+            margin: auto;
+        }
 
-        /* WhatsApp Flotante */
-        .wsp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; text-decoration: none; z-index: 2000; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
 
-       @media (max-width: 768px)
-       
-        {
-    .nav-list { 
-        position: absolute; 
-        top: 80px;
-        left: -100%; 
-        flex-direction: column; 
-        background: rgba(0, 0, 0, 0.85) !important;
-        backdrop-filter: blur(12px);
-        width: 100%; 
-        text-align: center; 
-        padding: 20px 0; 
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        z-index: 999;
-        transition: left 0.3s ease;
-    }
-    .nav-list.active { left: 0; }
-    .menu-toggle { display: block; }
-    .magnetic-title { font-size: 3rem; }
+        .faq-item {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--card-bg);
+            padding-bottom: 20px;
+        }
 
-    html[data-theme="light"] .nav-list li a {
-        color: #ffffff !important;
-    }
-    html[data-theme="dark"] .nav-list li a,
-    html:not([data-theme]) .nav-list li a {
-        color: #ffffff !important;
-    }
-}
+        .faq-item h4 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
 
-/* Escritorio: menú siempre visible */
-@media (min-width: 768px) {
-    .nav-list {
-        display: flex !important;
-        position: static;
-        background: transparent !important;
-        box-shadow: none;
-        padding: 0;
-    }
-    .menu-toggle { display: none; }
-}
+        /* ── Footer ── */
+        footer {
+            padding: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0;
+        }
+
+        footer ul li {
+            display: inline-block;
+        }
+
+        footer ul li a {
+            font-size: 2rem;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer ul li a:hover {
+            color: #E1306C;
+        }
+
+        /* ── WhatsApp flotante ── */
+        .wsp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            text-decoration: none;
+            z-index: 2000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        /* ── Móvil ── */
+        @media (max-width: 768px) {
+            .nav-list {
+                position: absolute;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.92) !important;
+                backdrop-filter: blur(12px);
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+                z-index: 999;
+                transition: left 0.3s ease;
+            }
+
+            .nav-list.active { left: 0; }
+
+            /* Cada ítem ocupa el ancho completo */
+            .nav-list li {
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Links en menú móvil */
+            .nav-list li a {
+                display: block;
+                width: 100%;
+                padding: 12px 0;
+                margin: 0;
+                color: #ffffff !important;
+                font-size: 1.1rem;
+                transition: color 0.2s ease, background 0.2s ease;
+            }
+
+            /* Azul al tocar (touch / active) */
+            .nav-list li a:active,
+            .nav-list li a:focus {
+                color: var(--accent-color) !important;
+                background: rgba(37, 99, 235, 0.08);
+            }
+
+            .menu-toggle { display: block; }
+
+            /* H1 más pequeño en móvil */
+            .magnetic-title { font-size: 2.2rem; }
+        }
+
+        /* ── Desktop: menú siempre visible ── */
+        @media (min-width: 769px) {
+            .nav-list {
+                display: flex !important;
+                position: static;
+                background: transparent !important;
+                box-shadow: none;
+                padding: 0;
+            }
+            .menu-toggle { display: none; }
+        }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">
-            <img src="icono-logo-01.png" alt="Kalo Creativa">
+            <img src="img/icono del logo-01.png" alt="Kalo Creativa">
         </div>
         <div class="nav-right">
-            <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon" id="theme-icon"></i></button>
+            <button id="theme-toggle" class="theme-btn">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
             <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
             <ul class="nav-list">
-                <li><a href="#"><a href="mailto:info@kalocreativa.com.ar" class="btn-kalo">
-  <span class="icon">✉</span> 
-  Enviar un correo
-</a></a></li>
+                <li>
+                    <a href="mailto:info@kalocreativa.com.ar">Contacto</a>
+                </li>
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#proyectos">Productos</a></li>
             </ul>
@@ -279,10 +475,18 @@
 
     <footer>
         <p>Copyright &copy; 2026 Kalo Creativa. Todos los derechos reservados. Buenos Aires - Argentina</p>
-        <li><a href="https://instagram.com/kalocreativa" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <ul>
+            <li>
+                <a href="https://instagram.com/kalocreativa" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
     </footer>
 
-    <a href="https://wa.me/+5491176145651" class="wsp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/+5491176145651" class="wsp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script>
         // Modo Oscuro
@@ -296,11 +500,19 @@
         });
 
         // Menú Móvil
-        const menu = document.querySelector('#mobile-menu');
+        const menuToggle = document.getElementById('mobile-menu');
         const navList = document.querySelector('.nav-list');
-        menu.addEventListener('click', () => {
-            menu.classList.toggle('is-active');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('is-active');
             navList.classList.toggle('active');
+        });
+
+        // Cerrar menú al tocar un link
+        navList.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                menuToggle.classList.remove('is-active');
+            });
         });
 
         // Efecto magnético en el título
