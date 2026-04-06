@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalo Creativa</title>
+    <meta name="description" content="Servicios de diseño gráfico profesional: Stickers, Vinilos, Letras Corpóreas, Neón LED y Papelería. ¡Transforma tu marca hoy!">
+    <meta property="og:title" content="Kalo Creativa | Portafolio de Diseño">
+    <meta property="og:description" content="Soluciones visuales de alto impacto para tu negocio.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --card-bg: #f4f4f4;
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --accent-color: #2563eb;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --card-bg: #1e1e1e;
+            --nav-bg: rgba(18, 18, 18, 0.9);
+            --accent-color: #3b82f6;
+        }
+
+        * { box-sizing: border-box; transition: background-color 0.3s ease, color 0.3s ease; scroll-behavior: smooth; }
+        body { font-family: "Outfit", sans-serif; margin: 0; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+
+        /* Navbar */
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; position: sticky; top: 0; background: var(--nav-bg); backdrop-filter: blur(10px); z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo img { height: 50px; width: auto; display: block; transition: transform 0.3s ease; }
+        .logo img:hover { transform: scale(1.05); }
+        .nav-right { display: flex; align-items: center; }
+        .nav-list { display: flex; list-style: none; margin: 0; padding: 0; }
+        .nav-list li a { text-decoration: none; color: var(--text-color); margin: 0 15px; font-weight: 600; }
+        .theme-btn { background: none; border: none; color: var(--text-color); font-size: 1.2rem; cursor: pointer; margin-right: 20px; }
+        .menu-toggle { display: none; cursor: pointer; }
+        .bar { display: block; width: 25px; height: 3px; margin: 5px; background: var(--text-color); }
+
+        /* Hero */
+        .hero-header {
+            position: relative;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background-image: url('img/portada-01.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Título magnético */
+        .magnetic-title {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            color: #fff;
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            cursor: default;
+            user-select: none;
+            line-height: 1.1;
+        }
+        .magnetic-char {
+            display: inline-block;
+            transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 0.85rem 2.2rem;
+            border: 2px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            background: transparent;
+            transition: background 0.3s, color 0.3s;
+        }
+        .hero-cta:hover { background: #fff; color: #111; }
+
+        /* Galería */
+        .portfolio { padding: 50px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: auto; }
+        .work-item { position: relative; height: 400px; border-radius: 20px; overflow: hidden; background: var(--card-bg); }
+        .work-item img { width: 100%; height: 100%; object-fit: cover; }
+        .work-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; opacity: 0; padding: 20px; transition: opacity 0.4s; }
+        .work-item:hover .work-overlay { opacity: 1; }
+        .work-info { text-align: center; color: rgb(10, 153, 160); transform: translateY(20px); transition: transform 0.4s; }
+        .work-item:hover .work-info { transform: translateY(0); }
+        .work-info h3 { font-size: 1.5rem; margin-bottom: 10px; }
+
+        /* FAQ */
+        .faq { padding: 80px 5%; max-width: 800px; margin: auto; }
+        .faq h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+        .faq-item { margin-bottom: 30px; border-bottom: 1px solid var(--card-bg); padding-bottom: 20px; }
+        .faq-item h4 { color: var(--accent-color); margin-bottom: 10px; font-size: 1.2rem; }
+        
+        /* Footer */
+        footer { padding: 40px; text-align: center; font-size: 0.9rem; opacity: 0.7; }
+
+        /* WhatsApp Flotante */
+        .wsp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; text-decoration: none; z-index: 2000; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+
+       @media (max-width: 768px)
+       
+        {
+    .nav-list { 
+        position: absolute; 
+        top: 80px;
+        left: -100%; 
+        flex-direction: column; 
+        background: rgba(0, 0, 0, 0.85) !important;
+        backdrop-filter: blur(12px);
+        width: 100%; 
+        text-align: center; 
+        padding: 20px 0; 
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        z-index: 999;
+        transition: left 0.3s ease;
+    }
+    .nav-list.active { left: 0; }
+    .menu-toggle { display: block; }
+    .magnetic-title { font-size: 3rem; }
+
+    html[data-theme="light"] .nav-list li a {
+        color: #ffffff !important;
+    }
+    html[data-theme="dark"] .nav-list li a,
+    html:not([data-theme]) .nav-list li a {
+        color: #ffffff !important;
+    }
+}
+
+/* Escritorio: menú siempre visible */
+@media (min-width: 768px) {
+    .nav-list {
+        display: flex !important;
+        position: static;
+        background: transparent !important;
+        box-shadow: none;
+        padding: 0;
+    }
+    .menu-toggle { display: none; }
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/icono del logo-01.png" alt="Kalo Creativa">
+        </div>
+        <div class="nav-right">
+            <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon" id="theme-icon"></i></button>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#proyectos">Productos</a></li>
+                <li><a href="https://instagram.com/kalocreativa" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-header" id="heroHeader">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="magnetic-title" id="magTitle"></h1>
+            <p style="color: rgba(255,255,255,0.85); font-size: 1.1rem; margin-bottom: 2rem;">
+                Transformo ideas en realidades visuales impactantes y soluciones publicitarias a medida.
+            </p>
+            <a href="https://wa.me/5491176145651" class="hero-cta">Pedi tu presupuesto</a>
+        </div>
+    </header>
+
+    <section class="portfolio" id="proyectos">
+        <div class="work-item">
+            <img src="img/img-1.jpg" alt="Stickers Personalizados">
+            <div class="work-overlay">
+                <div class="work-info">
+                    <h3>Stickers</h3>
+                    <p>Etiquetas personalizadas para termos y negocios. Resistentes y de alta calidad.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <img src="img/img-2.jpg" alt="Vinilos y Calcomanías">
+            <div class="work-overlay">
+                <div class="work-info">
+                    <h3>Calcomanías y Vinilos</h3>
+                    <p>Rotulación para vehículos y kits personalizados para bicicletas.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <img src="img/img-3.jpg" alt="Letras Corpóreas">
+            <div class="work-overlay">
+                <div class="work-info">
+                    <h3>Letras Corpóreas</h3>
+                    <p>Publicidad en 3D para locales y oficinas. Elegancia que destaca.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <img src="img/img-4.jpg" alt="Carteles Neón LED">
+            <div class="work-overlay">
+                <div class="work-info">
+                    <h3>Neón LED</h3>
+                    <p>Iluminación moderna y personalizada para cautivar a tus clientes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <img src="img/img-5.jpg" alt="Papelería Profesional">
+            <div class="work-overlay">
+                <div class="work-info">
+                    <h3>Papelería</h3>
+                    <p>Tarjetas personales, Menús, folletos y flyers con acabado profesional.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <img src="img/img-6.jpg" alt="Logos y Branding de marca">
+            <div class="work-overlay">
+                <div class="work-info">
+                    <h3>Logos y Branding</h3>
+                    <p>Diseño de logotipos y Branding de Marcas, Diseño para las redes sociales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-item">
+            <h4>¿Cómo solicito un presupuesto?</h4>
+            <p>Es muy fácil, haz clic en el botón de WhatsApp y cuéntame tu idea. Te responderé con una cotización detallada en poco tiempo.</p>
+        </div>
+        <div class="faq-item">
+            <h4>¿Realizan envíos de los productos físicos?</h4>
+            <p>Sí, realizamos envíos seguros de todos nuestros productos (stickers, neones, vinilos) a todo el país.</p>
+        </div>
+        <div class="faq-item">
+            <h4>¿Cómo es el proceso de pago?</h4>
+            <p>Trabajamos con un anticipo del 50% para iniciar el diseño/producción y el saldo restante se cancela al finalizar.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright &copy; 2026 Kalo Creativa. Todos los derechos reservados. Buenos Aires - Argentina</p>
+    </footer>
+
+    <a href="https://wa.me/+5491176145651" class="wsp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        // Modo Oscuro
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            themeIcon.classList.toggle('fa-moon');
+            themeIcon.classList.toggle('fa-sun');
+        });
+
+        // Menú Móvil
+        const menu = document.querySelector('#mobile-menu');
+        const navList = document.querySelector('.nav-list');
+        menu.addEventListener('click', () => {
+            menu.classList.toggle('is-active');
+            navList.classList.toggle('active');
+        });
+
+        // Efecto magnético en el título
+        const textoTitulo = "KALO CREATIVA";
+        const titulo = document.getElementById('magTitle');
+        const caracteres = [];
+
+        textoTitulo.split('').forEach(ch => {
+            const span = document.createElement('span');
+            span.className = 'magnetic-char';
+            span.textContent = ch === ' ' ? '\u00A0' : ch;
+            if (ch === ' ') span.style.width = '0.35em';
+            titulo.appendChild(span);
+            caracteres.push(span);
+        });
+
+        const hero = document.getElementById('heroHeader');
+
+        hero.addEventListener('mousemove', e => {
+            const rect = hero.getBoundingClientRect();
+            const mx = e.clientX - rect.left;
+            const my = e.clientY - rect.top;
+
+            caracteres.forEach(ch => {
+                const cr = ch.getBoundingClientRect();
+                const cx = cr.left - rect.left + cr.width / 2;
+                const cy = cr.top - rect.top + cr.height / 2;
+                const dx = mx - cx;
+                const dy = my - cy;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                const radio = 130;
+                if (dist < radio) {
+                    const fuerza = (1 - dist / radio) * 30;
+                    const angulo = Math.atan2(dy, dx);
+                    ch.style.transform = `translate(${Math.cos(angulo) * fuerza}px, ${Math.sin(angulo) * fuerza}px)`;
+                } else {
+                    ch.style.transform = 'translate(0,0)';
+                }
+            });
+        });
+
+        hero.addEventListener('mouseleave', () => {
+            caracteres.forEach(ch => { ch.style.transform = 'translate(0,0)'; });
+        });
+    </script>
+</body>
+</html>
