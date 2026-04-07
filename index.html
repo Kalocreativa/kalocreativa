@@ -3,10 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalo Creativa</title>
-    <meta name="description" content="Servicios de diseño gráfico profesional: Stickers, Vinilos, Letras Corpóreas, Neón LED y Papelería. ¡Transforma tu marca hoy!">
-    <meta property="og:title" content="Kalo Creativa | Portafolio de Diseño">
-    <meta property="og:description" content="Soluciones visuales de alto impacto para tu negocio.">
+
+    <!-- ── SEO TÍTULO ── -->
+    <title>Kalo Creativa | Letras Corpóreas, Calcomanías, Vinilos y Carteles en Buenos Aires</title>
+
+    <!-- ── SEO DESCRIPCIÓN (lo que aparece bajo el título en Google) ── -->
+    <meta name="description" content="Kalo Creativa: diseño y fabricación de letras corpóreas, calcomanías para autos y bicicletas, vinilos, carteles, stickers, neón LED y papelería profesional en Buenos Aires, Argentina.">
+
+    <!-- ── PALABRAS CLAVE ── -->
+    <meta name="keywords" content="Kalo Creativa, letras corpóreas Buenos Aires, calcomanías para autos, calcos para bicicletas, vinilos decorativos, carteles publicitarios, stickers personalizados, neón LED, papelería, diseño gráfico Buenos Aires, rotulación vehicular, branding, logos">
+
+    <!-- ── AUTOR Y ROBOTS ── -->
+    <meta name="author" content="Kalo Creativa">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kalocreativa.github.io/">
+
+    <!-- ── OPEN GRAPH (WhatsApp, Facebook, redes sociales) ── -->
+    <meta property="og:title" content="Kalo Creativa | Letras Corpóreas, Vinilos y Carteles en Buenos Aires">
+    <meta property="og:description" content="Diseño y fabricación de letras corpóreas, calcomanías, vinilos, carteles neón LED y stickers personalizados. Buenos Aires, Argentina.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kalocreativa.github.io/">
+    <meta property="og:image" content="https://kalocreativa.github.io/portada-01.jpg">
+    <meta property="og:locale" content="es_AR">
+
+    <!-- ── DATOS ESTRUCTURADOS (Schema.org — Google entiende que sos un negocio local) ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Kalo Creativa",
+      "description": "Diseño y fabricación de letras corpóreas, calcomanías para autos y bicicletas, vinilos, carteles, stickers, neón LED y papelería profesional.",
+      "url": "https://kalocreativa.github.io/",
+      "telephone": "+5491176145651",
+      "email": "info@kalocreativa.com.ar",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "sameAs": [
+        "https://instagram.com/kalocreativa"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Productos y Servicios",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Letras Corpóreas" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Calcomanías para autos y bicicletas" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vinilos decorativos y rotulación" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Carteles y Neón LED" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Stickers personalizados" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Papelería profesional" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Logos y Branding" } }
+        ]
+      }
+    }
+    </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
@@ -17,7 +69,7 @@
             --text-color: #1a1a1a;
             --card-bg: #f4f4f4;
             --nav-bg: rgba(255, 255, 255, 0.9);
-            --accent-color: #0a99a0;
+            --accent-color: #2563eb;
         }
 
         [data-theme="dark"] {
@@ -76,7 +128,6 @@
             padding: 0;
         }
 
-        /* Links en desktop */
         .nav-list li a {
             text-decoration: none;
             color: var(--text-color);
@@ -85,7 +136,6 @@
             transition: color 0.2s ease;
         }
 
-        /* Hover en desktop */
         .nav-list li a:hover {
             color: var(--accent-color) !important;
         }
@@ -141,7 +191,6 @@
             z-index: 1;
         }
 
-        /* ── Título magnético ── */
         .magnetic-title {
             display: flex;
             flex-wrap: wrap;
@@ -244,7 +293,7 @@
         }
 
         .faq-item h4 {
-            color: var(--accent-color);
+            color: #0a99a0;
             margin-bottom: 10px;
             font-size: 1.2rem;
         }
@@ -263,9 +312,7 @@
             margin: 12px 0 0;
         }
 
-        footer ul li {
-            display: inline-block;
-        }
+        footer ul li { display: inline-block; }
 
         footer ul li a {
             font-size: 2rem;
@@ -274,9 +321,7 @@
             transition: color 0.2s ease;
         }
 
-        footer ul li a:hover {
-            color: #E1306C;
-        }
+        footer ul li a:hover { color: #E1306C; }
 
         /* ── WhatsApp flotante ── */
         .wsp-float {
@@ -316,13 +361,11 @@
 
             .nav-list.active { left: 0; }
 
-            /* Cada ítem ocupa el ancho completo */
             .nav-list li {
                 width: 100%;
                 text-align: center;
             }
 
-            /* Links en menú móvil */
             .nav-list li a {
                 display: block;
                 width: 100%;
@@ -333,7 +376,6 @@
                 transition: color 0.2s ease, background 0.2s ease;
             }
 
-            /* Azul al tocar (touch / active) */
             .nav-list li a:active,
             .nav-list li a:focus {
                 color: var(--accent-color) !important;
@@ -341,12 +383,10 @@
             }
 
             .menu-toggle { display: block; }
-
-            /* H1 más pequeño en móvil */
             .magnetic-title { font-size: 2.2rem; }
         }
 
-        /* ── Desktop: menú siempre visible ── */
+        /* ── Desktop ── */
         @media (min-width: 769px) {
             .nav-list {
                 display: flex !important;
@@ -363,7 +403,7 @@
 
     <nav class="navbar">
         <div class="logo">
-            <img src="icono-logo-01.png" alt="Kalo Creativa">
+            <img src="icono-logo-01.png" alt="Kalo Creativa logo">
         </div>
         <div class="nav-right">
             <button id="theme-toggle" class="theme-btn">
@@ -375,89 +415,93 @@
                 <span class="bar"></span>
             </div>
             <ul class="nav-list">
-                <li>
-                    <a href="mailto:info@kalocreativa.com.ar">Contacto</a>
-                </li>
+                <li><a href="mailto:info@kalocreativa.com.ar">Contacto</a></li>
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#proyectos">Productos</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- H1 visible para Google con palabras clave -->
     <header class="hero-header" id="heroHeader">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="magnetic-title" id="magTitle"></h1>
             <p style="color: rgba(255,255,255,0.85); font-size: 1.1rem; margin-bottom: 2rem;">
-                Transformo ideas en realidades visuales impactantes y soluciones publicitarias a medida.
+                Letras corpóreas, calcomanías para autos y bicicletas, vinilos, carteles y stickers personalizados en Buenos Aires.
             </p>
             <a href="https://wa.me/5491176145651" class="hero-cta">Pedi tu presupuesto</a>
         </div>
     </header>
 
-    <section class="portfolio" id="proyectos">
+    <!-- Texto oculto visualmente pero legible por Google -->
+    <p style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+        Kalo Creativa ofrece letras corpóreas, calcomanías para autos, calcos para bicicletas, vinilos decorativos, carteles publicitarios, neón LED, stickers personalizados y papelería en Buenos Aires, Argentina.
+    </p>
+
+    <section class="portfolio" id="proyectos" aria-label="Productos y servicios de Kalo Creativa">
         <div class="work-item">
-            <img src="img-01.jpg" alt="Stickers Personalizados">
+            <img src="img-01.jpg" alt="Stickers personalizados para termos y negocios en Buenos Aires - Kalo Creativa">
             <div class="work-overlay">
                 <div class="work-info">
-                    <h3>Stickers</h3>
-                    <p>Etiquetas personalizadas para termos y negocios. Resistentes y de alta calidad.</p>
+                    <h3>Stickers Personalizados</h3>
+                    <p>Etiquetas personalizadas para termos y negocios. Resistentes, impermeables y de alta calidad.</p>
                 </div>
             </div>
         </div>
 
         <div class="work-item">
-            <img src="img-02.jpg" alt="Vinilos y Calcomanías">
+            <img src="img-02.jpg" alt="Calcomanías para autos y calcos para bicicletas en Buenos Aires - Kalo Creativa">
             <div class="work-overlay">
                 <div class="work-info">
                     <h3>Calcomanías y Vinilos</h3>
-                    <p>Rotulación para vehículos y kits personalizados para bicicletas.</p>
+                    <p>Calcomanías para autos, calcos para bicicletas y rotulación de vehículos a medida.</p>
                 </div>
             </div>
         </div>
 
         <div class="work-item">
-            <img src="img-03.jpg" alt="Letras Corpóreas">
+            <img src="img-03.jpg" alt="Letras corpóreas 3D para locales y oficinas en Buenos Aires - Kalo Creativa">
             <div class="work-overlay">
                 <div class="work-info">
                     <h3>Letras Corpóreas</h3>
-                    <p>Publicidad en 3D para locales y oficinas. Elegancia que destaca.</p>
+                    <p>Letras corpóreas en 3D para locales, oficinas y eventos. Publicidad que destaca.</p>
                 </div>
             </div>
         </div>
 
         <div class="work-item">
-            <img src="img-04.jpg" alt="Carteles Neón LED">
+            <img src="img-04.jpg" alt="Carteles y letreros neón LED personalizados en Buenos Aires - Kalo Creativa">
             <div class="work-overlay">
                 <div class="work-info">
-                    <h3>Neón LED</h3>
-                    <p>Iluminación moderna y personalizada para cautivar a tus clientes.</p>
+                    <h3>Carteles Neón LED</h3>
+                    <p>Carteles y letreros en neón LED personalizados para comercios y eventos.</p>
                 </div>
             </div>
         </div>
 
         <div class="work-item">
-            <img src="img-05.jpg" alt="Papelería Profesional">
+            <img src="img-05.jpg" alt="Papelería profesional: tarjetas, folletos y flyers en Buenos Aires - Kalo Creativa">
             <div class="work-overlay">
                 <div class="work-info">
-                    <h3>Papelería</h3>
-                    <p>Tarjetas personales, Menús, folletos y flyers con acabado profesional.</p>
+                    <h3>Papelería Profesional</h3>
+                    <p>Tarjetas personales, menús, folletos y flyers con acabado profesional.</p>
                 </div>
             </div>
         </div>
 
         <div class="work-item">
-            <img src="img-06.jpg" alt="Logos y Branding de marca">
+            <img src="img-06.jpg" alt="Diseño de logos y branding de marcas en Buenos Aires - Kalo Creativa">
             <div class="work-overlay">
                 <div class="work-info">
                     <h3>Logos y Branding</h3>
-                    <p>Diseño de logotipos y Branding de Marcas, Diseño para las redes sociales.</p>
+                    <p>Diseño de logotipos, identidad de marca y contenido para redes sociales.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="faq">
+    <section class="faq" aria-label="Preguntas frecuentes sobre Kalo Creativa">
         <h2>Preguntas Frecuentes</h2>
         <div class="faq-item">
             <h4>¿Cómo solicito un presupuesto?</h4>
@@ -465,31 +509,38 @@
         </div>
         <div class="faq-item">
             <h4>¿Realizan envíos de los productos físicos?</h4>
-            <p>Sí, realizamos envíos seguros de todos nuestros productos (stickers, neones, vinilos) a todo el país.</p>
+            <p>Sí, realizamos envíos seguros de todos nuestros productos (stickers, neones, vinilos, letras corpóreas) a todo el país.</p>
         </div>
         <div class="faq-item">
             <h4>¿Cómo es el proceso de pago?</h4>
             <p>Trabajamos con un anticipo del 50% para iniciar el diseño/producción y el saldo restante se cancela al finalizar.</p>
         </div>
+        <div class="faq-item">
+            <h4>¿Hacen calcomanías para autos y bicicletas?</h4>
+            <p>Sí, fabricamos calcomanías y calcos personalizados para autos, motos y bicicletas en cualquier forma y color.</p>
+        </div>
+        <div class="faq-item">
+            <h4>¿Dónde están ubicados?</h4>
+            <p>Estamos en Buenos Aires, Argentina. Atendemos por WhatsApp y realizamos envíos a todo el país.</p>
+        </div>
     </section>
 
     <footer>
-        <p>Copyright &copy; 2026 Kalo Creativa. Todos los derechos reservados. Buenos Aires - Argentina</p>
+        <p>Copyright &copy; 2026 Kalo Creativa. Diseño gráfico, letras corpóreas y vinilos en Buenos Aires, Argentina.</p>
         <ul>
             <li>
-                <a href="https://instagram.com/kalocreativa" target="_blank" aria-label="Instagram">
+                <a href="https://instagram.com/kalocreativa" target="_blank" aria-label="Instagram de Kalo Creativa">
                     <i class="fab fa-instagram"></i>
                 </a>
             </li>
         </ul>
     </footer>
 
-    <a href="https://wa.me/+5491176145651" class="wsp-float" target="_blank" aria-label="WhatsApp">
+    <a href="https://wa.me/+5491176145651" class="wsp-float" target="_blank" aria-label="Contactar Kalo Creativa por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        // Modo Oscuro
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         themeToggle.addEventListener('click', () => {
@@ -499,7 +550,6 @@
             themeIcon.classList.toggle('fa-sun');
         });
 
-        // Menú Móvil
         const menuToggle = document.getElementById('mobile-menu');
         const navList = document.querySelector('.nav-list');
         menuToggle.addEventListener('click', () => {
@@ -507,7 +557,6 @@
             navList.classList.toggle('active');
         });
 
-        // Cerrar menú al tocar un link
         navList.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navList.classList.remove('active');
@@ -515,7 +564,6 @@
             });
         });
 
-        // Efecto magnético en el título
         const textoTitulo = "KALO CREATIVA";
         const titulo = document.getElementById('magTitle');
         const caracteres = [];
@@ -535,7 +583,6 @@
             const rect = hero.getBoundingClientRect();
             const mx = e.clientX - rect.left;
             const my = e.clientY - rect.top;
-
             caracteres.forEach(ch => {
                 const cr = ch.getBoundingClientRect();
                 const cx = cr.left - rect.left + cr.width / 2;
